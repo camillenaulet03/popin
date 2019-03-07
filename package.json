@@ -1,0 +1,19 @@
+{
+  "name": "popin-master",
+  "version": "1.0.0",
+  "description": "GUINAUDEAU Axelle <br /> GUICHETEAU Martin <br /> DEBON Maël",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "grunt": "^1.0.3",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-uglify-es": "^3.3.0"
+  }
+}
