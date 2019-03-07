@@ -1,0 +1,15 @@
+.container {
+  width: 960px;
+}
+.container h1 {
+  color: #54912D;
+}
+.container .sidebar {
+  width: 320px;
+  float: right;
+}
+.container .footer .box {
+  width: 320px;
+}
+
+/*# sourceMappingURL=main.css.map */
