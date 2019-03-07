@@ -1,4 +1,4 @@
-Naulet Camille \n
+Naulet Camille   
 Garault Alexandre
 Deleon Johan
 Guinaudeau Axelle
