@@ -1,36 +1,57 @@
  module.exports = function(grunt) {
  	grunt.initConfig({
- 		concat:  {
-             options: {
-            	 separator: ';',
-             },
-             dist: {
-                 src:  ['script/script1.js', 'script/script2.js'],
-                 dest:  'script/scripts.js',
-             },
-         },
+		sass: {                              
+        dist: {                            
+          options: {                       
+            style: 'expanded'
+          },
+          files: [{
+            expand: true,
+            src: ['./src/scss/*.scss'],
+            dest: '',
+            ext: '.css'
+          }],
+        }
+      },
+	  
+	  concatCss: {
+        options: {
+        separator: ' ',
+        },
+            dist: {
+              src: ['src/css/*.css',  'scr/scss/stylessheet3.css'],
+              dest:  'src/css/main.css',
+              }
+        },
+   
+
+        concatJs: {
+          options: {
+          separator: ';',
+          },
+          
+          dist: {
+              src: ['src/script/script1.js', 'src/script/script2.js'],
+              dest:  'src/script/script.js',
+              }
+          },
+		  
          uglify: {
          my_target: {
              files:  {
-             	'script/scripts.min.js': ['script/scripts.js']
+             	'src/script/script.js': ['src/script/script.js']
 		         }
 		     }
-		 },                            // Task
-		    /*sass: {
-		options: {
-			implementation: sass,
-			sourceMap: true
-		},
-		dist: {
-			files: {
-				'main.css': 'main.scss'
-			}
-		}
-	}*/
-		  
- 	});
+		 }
+ });
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.renameTask('concat', 'concatCss');
+    
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.renameTask('concat', 'concatJs');
+	
  	grunt.loadNpmTasks('grunt-contrib-concat');
  	grunt.loadNpmTasks('grunt-contrib-uglify');
  	grunt.loadNpmTasks('grunt-contrib-sass');
- 	grunt.registerTask('default', ['concat','uglify']);
+ 	grunt.registerTask('default', ['sass', 'concatJs', 'concatCss' ,'uglify']);
  }
