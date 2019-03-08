@@ -34,7 +34,7 @@
           files: [{
             expand: true,
             src: ['./src/script/*.js'],
-            dest: "./src/js_pur/",
+            dest: "./src/script/",
           }],
           options: {
               transform: [['babelify', { presets: "es2015" }]],
@@ -84,8 +84,8 @@
           },
           
           dist: {
-              src: ['src/script/*.js'],
-              dest:  'src/script/script.js',
+              src: ['./src/script/*.js'],
+              dest:  './src/script/script.js',
               }
           },
 		  
@@ -98,7 +98,7 @@
 		 }, 
 		 
 		 zip: {
-                'archive.zip': ['./src/css/main.css','./src/script/script.js','./src/image','./src/index.html']
+                'archive.zip': ['./src/css/main.css','./src/script/script.js','./src/image/*','./src/index.html']
               }
  });
     grunt.loadNpmTasks('grunt-contrib-concat');
